@@ -13,7 +13,10 @@ const addListColumn = (start) => {
         ulElem.appendChild(lielem)
     }
     listColDiv.appendChild(ulElem);
-    listDiv.appendChild(listColDiv);    
+    listDiv.appendChild(listColDiv); 
+}
+const removeLastListColumn = () => {
+        listDiv.removeChild(listDiv.lastElementChild); 
 }
 
 let i = 1;
@@ -25,7 +28,11 @@ const onButtonClick = () => {
 
 addListColumn(i);
 
-
-
+const prev = () => {
+    if (i > 5) {
+        i = i - numsPerList;
+        removeLastListColumn();
+    }
+ }
 
 
